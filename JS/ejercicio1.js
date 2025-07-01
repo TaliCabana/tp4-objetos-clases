@@ -6,3 +6,19 @@ objeto.apadar()       El auto se apagó
 */
 
 // Notación literal
+const auto = {
+    // Propiedades
+    color: plateado,
+    marca: Toyota,
+    modelo: Corolla,
+    estado: apagado,
+
+    // Método para encender:
+    encender: function(){
+        console.log(this) // Objeto
+        if (this.estado){
+            document.writeln(`<p>El auto debe encenderse</p>`)
+        }
+        
+    }
+}
