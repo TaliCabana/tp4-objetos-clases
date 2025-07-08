@@ -8,16 +8,16 @@ const cursoAlumno = prompt("¿En qué curso estás?");
 const calificacionAlumno =parseFloat(prompt("Ingresá tu primera calificación:"))
 
 // creo el objeto Alumno
-const Alumno = {
+const alumno = {
     nombre: nombreAlumno,
     curso: cursoAlumno,
     calificaciones: [calificacionAlumno]
 }
 
 // genero la función
-function agregarNota(Alumno, nuevaNota){
+function agregarNota(alumno, nuevaNota){
     if(!isNaN(nuevaNota) && nuevaNota>=0 && nuevaNota<=10){
-        Alumno.calificaciones.push(nuevaNota);
+        alumno.calificaciones.push(nuevaNota);
     } else{
         alert("La nota ingresada no es válida.")
     }
@@ -25,11 +25,11 @@ function agregarNota(Alumno, nuevaNota){
 
 // llamo a la función y guardo su valor:
 const nuevaNota = parseFloat(prompt("Ingresá otra calificación:"));
-agregarNota(Alumno, nuevaNota);
+agregarNota(alumno, nuevaNota);
 
 // calculo la calificacion mas alta
-function obtenerNotaMaxima(Alumno){
-    return Math.max(...Alumno.calificaciones)
+function obtenerNotaMaxima(alumno){
+    return Math.max(...alumno.calificaciones)
 }
 
 // clasifico la calificacion (con letra)
@@ -43,8 +43,8 @@ function clasificarAlumno(notaMaxima){
 const notaMaxima = obtenerNotaMaxima(Alumno);
 const clasificacion = clasificarAlumno(notaMaxima)
 
-document.writeln(`<h3>Alumno: ${Alumno.nombre}</h3>`);
-document.writeln(`<p>Curso: ${Alumno.curso}</p>`);
-document.writeln(`<p>Notas: ${Alumno.calificaciones.join(", ")}</p>`);
+document.writeln(`<h3>Alumno: ${alumno.nombre}</h3>`);
+document.writeln(`<p>Curso: ${alumno.curso}</p>`);
+document.writeln(`<p>Notas: ${alumno.calificaciones.join(", ")}</p>`);
 document.writeln(`<p>Nota más alta: ${notaMaxima}</p>`);
 document.writeln(`<p>Clasificación: ${clasificacion}</p>`);

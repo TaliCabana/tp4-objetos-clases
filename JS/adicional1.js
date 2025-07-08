@@ -8,24 +8,24 @@ const nombreUsuario = prompt("¿Cuál es tu nombre?");
 const edadUsuario = parseInt(prompt("Indicame cuántos años tenés"));
 const hobby = prompt("Contame cuál es tu hobby favorito");
 
-// objeto Persona:
-const Persona = {
+// objeto persona:
+const persona = {
   nombre: nombreUsuario,
   edad: edadUsuario,
   hobbies: [hobby],
 };
 
 // defino la función:
-function agregarHobby(Persona, nuevoHobby) {
-  Persona.hobbies.push(nuevoHobby); // push: agregar elemento al final del array
+function agregarHobby(persona, nuevoHobby) {
+  persona.hobbies.push(nuevoHobby); // push: agregar elemento al final del array
 }
 
 const nuevoHobby = prompt("Contame cuál es tu otro hobby preferido");
-agregarHobby(Persona,nuevoHobby); // Llamo a la función para que guarde el valor del segundo hobby
+agregarHobby(persona,nuevoHobby); // Llamo a la función para que guarde el valor del segundo hobby
 
-document.writeln(`<p>Los hobbies de ${Persona.nombre} son:</p>`);
+document.writeln(`<p>Los hobbies de ${persona.nombre} son:</p>`);
 document.writeln(`<ul>`);
-for (let hobby = 0; hobby < Persona.hobbies.length; hobby++) {
-  document.writeln(`<li>${Persona.hobbies[hobby]}</li>`)
+for (let hobby = 0; hobby < persona.hobbies.length; hobby++) {
+  document.writeln(`<li>${persona.hobbies[hobby]}</li>`)
 }
 document.writeln(`</ul>`)
