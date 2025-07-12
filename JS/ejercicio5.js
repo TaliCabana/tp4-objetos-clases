@@ -42,6 +42,37 @@ class Persona {
     }
     document.writeln(`<p>${this.nombre} pertenece a la ${generacion}. Su rasgo característico es: ${rasgo}.</p>`)
   }
+
+  /* 
+esMayorDeEdad: indica si es mayor de edad, devuelve un mensaje indicando que la persona es mayor de edad.
+mostrarDatos: devuelve toda la información del objeto.
+generaDNI(): genera un número aleatorio de 8 cifras.
+*/
+
+esMayorDeEdad(){
+    if (this.edad>=18){
+        document.writeln(`<p>${this.nombre} es mayor de edad</p>`);
+    } else {
+        document.writeln(`<p>${this.nombre} es menor de edad</p>`);
+    }
+}
+
+mostrarDatos(){
+    document.writeln(`<h3>Datos personales:</h3>`);
+    document.writeln(`<p>Nombre: ${this.nombre}</p>`);
+    document.writeln(`<p>Edad: ${this.edad}</p>`);
+    document.writeln(`<p>DNI: ${this.DNI}</p>`);
+    document.writeln(`<p>Sexo: ${this.sexo}</p>`);
+    document.writeln(`<p>Peso: ${this.peso} kg</p>`);
+    document.writeln(`<p>Altura: ${this.altura} m</p>`);
+    document.writeln(`<p>Año de nacimiento: ${this.anioNacimiento}</p>`);
+}
+
+generarDNI(){
+    const nuevoDNI = Math.floor(Math.random()*9000000)+10000000;
+    this.DNI = nuevoDNI;
+    document.writeln(`<p>Se generó un nuevo DNI: ${this.DNI}</p>`)
+}
 }
 
 // Pido datos al usuario por prompt:
@@ -55,5 +86,7 @@ const anioNacimiento = parseInt(prompt("Para que te informemos datos sobre tu ge
 
 const persona1 = new Persona (nombre, edad, DNI, sexo, peso, altura, anioNacimiento);
 
-// Llamo al método:
-persona1.mostrarGeneracion()
+// Llamo a los métodos:
+persona1.mostrarGeneracion();
+persona1.esMayorDeEdad();
+persona1.generarDNI();
